@@ -24,3 +24,23 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+.red {
+    background-color: #e64c47;
+}
+
+.blue {
+    background-color: #47aee6;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+.white-text {
+    color: white;
+}

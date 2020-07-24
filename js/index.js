@@ -25,24 +25,38 @@ function readTextFile(file)
 }
 
 function generate() {
-    if (!document.getElementById('start').classList.contains('hidden')) {
-        document.getElementById('start').classList.add("hidden");
-    }
-    if (document.getElementById('container').classList.contains('hidden')) {
-        document.getElementById('container').classList.remove("hidden");
-        document.getElementById('shuffle').classList.remove("hidden");
-    }
+    document.getElementById('start').classList.add("hidden");
+    document.getElementById('container').classList.remove("hidden");
+    document.getElementById('shuffle').classList.remove("hidden");
     clear();
     for (let i = 0; i < 5; i++) {
         let $row = document.createElement("div");
         $row.classList.add("row");
         for (let i = 0; i < 5; i++) {
             let $card = document.createElement("div");
-            $card.classList.add("card");
+            $card.classList.add("card", "white");
             let $p = document.createElement("p")
             $p.textContent = allText[getRandomInt(allText.length - 1)];
             $card.append($p);
             $row.append($card);
+
+            $card.addEventListener("click", function() {
+                if ($card.classList.contains('white')) {
+                    $card.classList.remove('white');
+                    $card.classList.add('red');
+                } else if ($card.classList.contains('red')) {
+                    $card.classList.remove('red');
+                    $card.classList.add('blue');
+                } else if ($card.classList.contains('blue')) {
+                    $card.classList.remove('blue');
+                    $card.classList.add('black');
+                    $p.classList.add("white-text");
+                } else if ($card.classList.contains('black')) {
+                    $card.classList.remove('black');
+                    $p.classList.remove("white-text");
+                    $card.classList.add('white');
+                }
+            });
         }
         document.getElementById('container').append($row);
     }
