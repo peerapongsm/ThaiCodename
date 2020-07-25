@@ -25,6 +25,10 @@ main {
     align-items: center;
 }
 
+p {
+    border-bottom: 5px solid black;
+}
+
 .red {
     background-color: #e64c47;
 }
@@ -41,6 +45,14 @@ main {
     background-color: black;
 }
 
+.yellow {
+    background-color: yellow;
+}
+
 .white-text {
     color: white;
+}
+
+.rotate {
+    transform: rotate(-180deg);
 }

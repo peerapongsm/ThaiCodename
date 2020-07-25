@@ -35,8 +35,11 @@ function generate() {
         for (let i = 0; i < 5; i++) {
             let $card = document.createElement("div");
             $card.classList.add("card", "white");
-            let $p = document.createElement("p")
-            $p.textContent = allText[getRandomInt(allText.length - 1)];
+            let $p1 = document.createElement("p")
+            let $p2 = document.createElement("p")
+            $p1.textContent = allText[getRandomInt(allText.length - 1)];
+            $p2.textContent = $p1.textContent;
+            $p2.classList.add('rotate');
             $card.append($p);
             $row.append($card);
 
@@ -49,7 +52,10 @@ function generate() {
                     $card.classList.add('blue');
                 } else if ($card.classList.contains('blue')) {
                     $card.classList.remove('blue');
+                    $card.classList.add('yellow');
+                } else if ($card.classList.contains('black')) {
                     $card.classList.add('black');
+                    $card.classList.remove('yellow');
                     $p.classList.add("white-text");
                 } else if ($card.classList.contains('black')) {
                     $card.classList.remove('black');
