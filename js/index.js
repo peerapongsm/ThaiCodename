@@ -1,6 +1,6 @@
 'use strict';
 
-var allText = readTextFile("./data/words.txt");
+var allText = readTextFile("./data/words_frequent.txt");
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
