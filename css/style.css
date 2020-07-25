@@ -9,14 +9,17 @@
 
 .card {
     border-color: black;
-    border-width: thick;
+    border-width: thin;
     border-style: solid;
+    border-radius: 20px;
     width: 200px;
     height: 120px;
     margin-right: 15px;
     text-align: center;
     font-family: helvetica;
     font-size: 18pt;
+    box-shadow: 5px 5px #666666;
+    cursor: pointer;
 }
 
 main {
@@ -27,36 +30,54 @@ main {
 }
 
 #p1 {
-    border-bottom: 2px dashed black;
+    border-bottom: 2px dashed #787878;
     margin-right: 40px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #p2 {
     color: grey;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .red {
     background-color: #e64c47;
+    transition-duration: .5s;
 }
 
 .blue {
-    background-color: #47aee6;
+    background-color: #5792fb;
+    transition-duration: .5s;
 }
 
 .white {
     background-color: white;
+    transition-duration: .5s;
 }
 
 .black {
     background-color: black;
+    transition-duration: .5s;
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: rgb(252, 255, 135);
+    transition-duration: .5s;
 }
 
 .white-text {
     color: white;
+    transition-duration: .5s;
 }
 
 .rotate {
