@@ -9,13 +9,14 @@
 
 .card {
     border-color: black;
-    border-width: thin;
+    border-width: thick;
     border-style: solid;
     width: 200px;
-    height: 150px;
+    height: 120px;
     margin-right: 15px;
     text-align: center;
-    font-size: 24pt;
+    font-family: helvetica;
+    font-size: 18pt;
 }
 
 main {
@@ -25,8 +26,13 @@ main {
     align-items: center;
 }
 
-p {
-    border-bottom: 5px solid black;
+#p1 {
+    border-bottom: 2px dashed black;
+    margin-right: 40px;
+}
+
+#p2 {
+    color: grey;
 }
 
 .red {

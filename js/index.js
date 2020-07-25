@@ -27,8 +27,9 @@ function readTextFile(file)
 function generate() {
     document.getElementById('start').classList.add("hidden");
     document.getElementById('container').classList.remove("hidden");
-    document.getElementById('shuffle').classList.remove("hidden");
     clear();
+
+    let deck = [];
     for (let i = 0; i < 5; i++) {
         let $row = document.createElement("div");
         $row.classList.add("row");
@@ -37,8 +38,23 @@ function generate() {
             $card.classList.add("card", "white");
             let $p1 = document.createElement("p")
             let $p2 = document.createElement("p")
-            $p1.textContent = allText[getRandomInt(allText.length - 1)];
+
+            var randomInt;
+            do {
+                randomInt = getRandomInt(allText.length - 1);
+            } while (deck.includes(randomInt) == -1);
+
+            deck.push(randomInt);
+            $p1.textContent = allText[randomInt];
             $p2.textContent = $p1.textContent;
+
+
+
+
+
+
+            $p1.id = "p1";
+            $p2.id = "p2";
             $p2.classList.add('rotate');
             $card.append($p1);
             $card.append($p2);
@@ -55,13 +71,13 @@ function generate() {
                     $card.classList.remove('blue');
                     $card.classList.add('yellow');
                 } else if ($card.classList.contains('yellow')) {
-                    $card.classList.add('black');
                     $card.classList.remove('yellow');
-                    $p.classList.add("white-text");
+                    $card.classList.add('black');
+                    $p1.classList.add("white-text");
                 } else if ($card.classList.contains('black')) {
-                    $card.classList.remove('black');
-                    $p.classList.remove("white-text");
                     $card.classList.add('white');
+                    $card.classList.remove('black');
+                    $p1.classList.remove("white-text");
                 }
             });
         }
@@ -77,4 +93,3 @@ function clear() {
 }
 
 document.getElementById('start').addEventListener("click", generate);
-document.getElementById('shuffle').addEventListener("click", generate);
