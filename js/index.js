@@ -40,7 +40,8 @@ function generate() {
             $p1.textContent = allText[getRandomInt(allText.length - 1)];
             $p2.textContent = $p1.textContent;
             $p2.classList.add('rotate');
-            $card.append($p);
+            $card.append($p1);
+            $card.append($p2);
             $row.append($card);
 
             $card.addEventListener("click", function() {
