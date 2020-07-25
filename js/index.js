@@ -53,7 +53,7 @@ function generate() {
                 } else if ($card.classList.contains('blue')) {
                     $card.classList.remove('blue');
                     $card.classList.add('yellow');
-                } else if ($card.classList.contains('black')) {
+                } else if ($card.classList.contains('yellow')) {
                     $card.classList.add('black');
                     $card.classList.remove('yellow');
                     $p.classList.add("white-text");
